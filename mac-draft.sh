@@ -20,8 +20,8 @@ echo -n "Select Option: " && read n && case $n in
    sudo macchanger -e $answer | sed 's/Current MAC: /Previous MAC:/g' | sed "2 d" | cut -b -78;;
 5) sudo ip link set dev $answer down && sleep .6s && echo ""
    sudo macchanger -r -b $answer | sed 's/Current MAC: /Previous MAC:/g' | sed "2 d" | cut -b -78;;
-6) echo "" && echo "            XX:XX:XX:XX:XX:XX"
-   echo -n "Specify MAC:" && read answer2
+6) echo "" && echo "               XX:XX:XX:XX:XX:XX"
+   echo -n "  Specify MAC: " && read answer2
    sudo ip link set dev $answer down && sleep .6s && echo ""
    sudo macchanger -m $answer2 $answer | sed 's/Current MAC: /Previous MAC:/g' | sed "2 d" | cut -b -78;;
 7) sleep .6s && echo "" && echo "(Leave Blank to List All)"
