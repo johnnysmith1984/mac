@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo clear && sleep .6s && sudo airmon-ng | cut -f 2-6 | cut -b -63 && sleep .6s
+sudo clear && sleep .6s && sudo airmon-ng | cut -f 2-6 | cut -b -60 && sleep .6s
 echo -n "Specify Interface: " && read answer
 while :; do clear && sleep .6s
 echo "" && echo "~${answer}~" && echo "" && sleep .4s
