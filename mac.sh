@@ -27,7 +27,6 @@ echo -n "Select Option: " && read n && case $n in
 7) sleep .6s && echo "" && echo "(Leave Blank to List All)"
    echo -n "   Search by Keyword: " && read answer3 && sleep .6s && echo ""
    sudo macchanger --list=${answer3} | cut -b 6- | sed 's/^[[:space:]]*//g' | cut -b -78 | sed "s/ess MACs://g";;
-*) sleep .6s && echo "" && echo "Invalid Option";;
-esac
+*) sleep .6s && echo "" && echo "Invalid Option";; esac
 echo "" && sleep .6s && sudo ip link set dev $answer up && sleep .6s
 #(mac)#    #uses airmon-ng,macchanger#    #AK#
