@@ -1,6 +1,8 @@
 
 -README-    ~mac.sh~    Does a Task Well    usage: ./mac.sh
 
+(Designed to run in default terminal window, but will run fine fullscreen also)
+
 Mac.sh uses airmon-ng to display interface names and macchanger to do the damn.
 I created mac.sh (originally macsauce.sh) to make modifying your mac easy and 
 straight forward enough that anyone can do it with limited knowledge or tools. 
