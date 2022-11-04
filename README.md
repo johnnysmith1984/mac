@@ -11,17 +11,6 @@ I have attempted to achieve this. Mac.sh sets the interface down automatically
 before modifying the MAC, and sets it back up once the desired changes have been
 applied. Designed with ease of use in mind, accomplished as easily as I could.
 
- 
-
-I added a hidden easter egg 0 option just kinda messing around, and it has 
-turned out to be pretty useful. Its basically a MAC preset. By default it
-changes your MAC to a Nintendo MAC, but you can easily replace that MAC with a
-MAC of your choosing. Or better yet, copy the whole zero option in the script, 
-paste it on the line directly above what you just copied, change the 0 to a 
-number or string of your choosing (except 0-7). Stick a MAC you like in there 
-and BOOM!(RIP Madden) Repeat the process to create MAC presets till your hearts
-content. Im not sure I described that well, but I have faith in you.
-
                                 ~#AKA#~
 
 P.S. Just a side note, if your OS is set up to change your MAC automatically,
