@@ -1,0 +1,38 @@
+#!/bin/bash
+sudo clear #&& sleep .2s && figlet suMAC
+sleep .2s && sudo airmon-ng | cut -f 2-6 | cut -b -62 && sleep .4s
+echo -n "Specify Interface: " && read answer
+while :; do clear && sleep .2s
+echo "" && echo "~${answer}~" && echo "" && sleep .2s
+sudo macchanger -s $answer | cut -b -78 && sleep .2s && echo ""
+echo "1) Return to Original MAC" && echo "2) Change MAC to a Different Vendor"
+echo "3) Change to a Random MAC" && echo "4) Keep Vendor and Change MAC"
+echo "5) Pretend to be a Burned-in-Address" && echo "6) Change to a Specific MAC"
+echo "7) List Known MAC Vendors" && echo "8) Change to a Different Interface" && echo "" && echo "q) Quit"
+echo "" && echo -n "Select Option: " && read n && case $n in
+0) sudo ip link set dev $answer down && sleep .2s
+   sudo macchanger -m 00:13:d9:4a:d6:02 $answer>/dev/null;;
+1) sudo ip link set dev $answer down && sleep .2s
+   sudo macchanger -p $answer>/dev/null;;
+2) sudo ip link set dev $answer down && sleep .2s
+   sudo macchanger -a $answer>/dev/null;;
+3) sudo ip link set dev $answer down && sleep .2s
+   sudo macchanger -r $answer>/dev/null;;
+4) sudo ip link set dev $answer down && sleep .2s
+   sudo macchanger -e $answer>/dev/null;;
+5) sudo ip link set dev $answer down && sleep .2s
+   sudo macchanger -r -b $answer>/dev/null;;
+6) echo "" && echo "               XX:XX:XX:XX:XX:XX"
+   echo -n "  Specify MAC: " && read answer2
+   sudo ip link set dev $answer down && sleep .2s && echo ""
+   sudo macchanger -m $answer2 $answer>/dev/null;;
+7) sleep .4s && echo "" && echo "(Leave Blank to List All)"
+   echo -n "   Search by Keyword: " && read answer3 && sleep .4s && echo ""
+   sudo macchanger --list=${answer3} | cut -b 6- | sed 's/^[[:space:]]*//g' | cut -b -78 | sed "s/ess MACs://g"
+   echo "" && echo -n "  Press (Enter) to Continue " && read nil;;
+8) sleep .2s && sudo airmon-ng | cut -f 2-6 | cut -b -62 && sleep .4s
+   echo -n "Specify Interface: " && read answer;;
+q) echo "" && echo "   Goodbye" && echo "" && break;;
+*) sleep .2s && echo "" && echo "Invalid Option" && sleep .8s;; esac
+sleep .2s && sudo ip link set dev $answer up; done
+#(sumac)#    #uses airmon-ng,macchanger,and figlet if uncommented in line 2(just a banner)#    #AK#
