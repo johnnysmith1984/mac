@@ -1,7 +1,7 @@
 
 -README-    ~suMAC~    (chmod +x sumac)    usage: ./sumac
 
-(Designed to run in default terminal window, but will run fine fullscreen also)
+(Designed to run in default terminal window, but will run fine maximized also)
 
 sumac uses airmon-ng to display interface names and macchanger to do the damn.
 I created sumac (originally mac.sh) to make modifying your mac easy and 
