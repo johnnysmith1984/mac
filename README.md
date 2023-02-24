@@ -1,5 +1,5 @@
 
--README-    ~suMAC~    Does a Task Well    usage: ./sumac
+-README-    ~suMAC~    (chmod +x sumac)    usage: ./sumac
 
 (Designed to run in default terminal window, but will run fine fullscreen also)
 
@@ -42,4 +42,4 @@ unmanaged-devices = interface-name:
 The line that says unmanaged-devices is not needed, but comes in handy to
 unmanage devices/interfaces on the fly for future reference..
 
-#suMAC#        #uses macchanger,airmon-ng,and figlet if you uncomment line 2(just a banner)#
+#suMAC#        #uses macchanger,airmon-ng,and figlet if you uncomment line 2#
